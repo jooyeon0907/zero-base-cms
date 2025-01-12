@@ -1,0 +1,42 @@
+### 회원가입 (고객)
+POST http://localhost:8081/signup/customer
+Content-Type: application/json
+
+{
+  "birth": "2025-01-12",
+  "email": "zerobase@gmail.com",
+  "name": "제로",
+  "password": "pw",
+  "phone": "01000001111"
+}
+
+### 이메일 인증 (고객)
+http://localhost:8081/signup/customer/verify?email=zerobase@gmail.com&code=YSUb6ksCoy
+
+
+### 로그인 (고객)
+POST http://localhost:8081/signin/customer
+Content-Type: application/json
+
+{
+  "email": "zerobase@gmail.com",
+  "password": "pw"
+}
+
+### 회원 정보 조회 (고객)
+GET http://localhost:8081/customer/getInfo
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJMbEIxSVR6T3NNbGdhWHRpSFJEVHVwWk5RV1NTMWJFQU4xVUJQNDVkS1FnPSIsImp0aSI6IlN1YkhlS1VSUnJlUVkrV1NPbkJrdGc9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE3MzY2Nzc4OTQsImV4cCI6MTczNjc2NDI5NH0.34Z6WVEGlHvjzDmuGY7Gcvy4eH8JmYqs2Sbul1I-YE8
+
+
+
+### 잔액 변경 (고객)
+POST http://localhost:8081/customer/balance
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJMbEIxSVR6T3NNbGdhWHRpSFJEVHVwWk5RV1NTMWJFQU4xVUJQNDVkS1FnPSIsImp0aSI6IlN1YkhlS1VSUnJlUVkrV1NPbkJrdGc9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE3MzY2Nzc4OTQsImV4cCI6MTczNjc2NDI5NH0.34Z6WVEGlHvjzDmuGY7Gcvy4eH8JmYqs2Sbul1I-YE8
+
+{
+  "from": "admin",
+  "message": "적립금 반영",
+  "money": 30000
+}
