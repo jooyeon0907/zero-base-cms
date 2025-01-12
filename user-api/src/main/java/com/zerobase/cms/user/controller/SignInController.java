@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping(value = "/signIn")
 @RequiredArgsConstructor
-public class SignInController {	
+public class SignInController {
 
 	private final SignInApplication signInApplication;
 
@@ -21,4 +21,8 @@ public class SignInController {
 		return ResponseEntity.ok(signInApplication.customerLoginToken(form));
 	}
 
+	@PostMapping("/seller")
+	public ResponseEntity<String> signInSeller(@RequestBody SignInForm form) {
+		return ResponseEntity.ok(signInApplication.sellerLoginToken(form));
+	}
 }
