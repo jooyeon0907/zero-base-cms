@@ -9,11 +9,11 @@ import org.springframework.data.envers.repository.support.EnversRevisionReposito
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-//@ServletComponentScan
-@EnableJpaRepositories(repositoryBaseClass = EnversRevisionRepositoryFactoryBean.class)
+@ServletComponentScan
+@EnableJpaRepositories(repositoryFactoryBeanClass = EnversRevisionRepositoryFactoryBean.class)
 @EnableJpaAuditing
 @SpringBootApplication
-//@EnableFeignClients
+@EnableFeignClients
 @RequiredArgsConstructor
 public class ZeroOrderApplication {
 	public static void main(String[] args) {
