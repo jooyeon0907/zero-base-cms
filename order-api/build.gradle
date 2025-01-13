@@ -35,9 +35,9 @@ dependencies {
 
 	//redis
 	implementation 'org.springframework.boot:spring-boot-starter-data-redis'
-	testImplementation('it.ozimov:embedded-redis:0.7.3'){
-		exclude group: "org.slf4j", module: "slfj-simple"
-	}
+//	testImplementation('it.ozimov:embedded-redis:0.7.3'){
+//		exclude group: "org.slf4j", module: "slfj-simple"
+//	}
 	testImplementation 'com.h2database:h2'
 
     implementation 'org.apache.commons:commons-lang3:3.12.0'
