@@ -25,6 +25,12 @@ public class CustomerCartController {
 		return ResponseEntity.ok(cartApplication.addCart(provider.getUserVo(token).getId(), form));
 	}
 
+	@GetMapping
+	public ResponseEntity<Cart> showCard(
+			@RequestHeader(name = "X-AUTH-TOKEN") String token) {
+		return ResponseEntity.ok(cartApplication.getCart(provider.getUserVo(token).getId()));
+
+	}
 
 
 }
