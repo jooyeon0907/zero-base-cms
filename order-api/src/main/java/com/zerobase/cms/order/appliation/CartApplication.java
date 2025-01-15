@@ -42,6 +42,18 @@ public class CartApplication {
 
 	}
 
+	/**
+	 * 엣지 케이스
+	 *
+	 * @param customerId
+	 * @param cart
+	 * @return
+	 */
+	public Cart updateCart(Long customerId, Cart cart) {
+		// 실질적으로 변하는 데이터 -> 상품 삭제, 수량 변경
+		cartService.putCart(customerId, cart);
+		return getCart(customerId);
+	}
 
 	// 1. 장바구니에 상품을 추가한다.
 	// 2. 상품의 가격이나 수량이 변동 된다.
