@@ -101,3 +101,35 @@ X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJMbEIxSVR6T3NNbGdhWHRpSFJEVHVwWk5RV
   "sellerId": 1
 }
 
+### 장바구니 보기
+GET http://localhost:8082/customer/cart
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJMbEIxSVR6T3NNbGdhWHRpSFJEVHVwWk5RV1NTMWJFQU4xVUJQNDVkS1FnPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNzM2Nzc0OTQ1LCJleHAiOjE3MzY4NjEzNDV9.xhueG_lFZGptiAT5Fs5Bo_zzs51OSZyJKSjAXnl3exg
+
+### 장바구니 업데이트
+PUT http://localhost:8082/customer/cart
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJMbEIxSVR6T3NNbGdhWHRpSFJEVHVwWk5RV1NTMWJFQU4xVUJQNDVkS1FnPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNzM2Nzc0OTQ1LCJleHAiOjE3MzY4NjEzNDV9.xhueG_lFZGptiAT5Fs5Bo_zzs51OSZyJKSjAXnl3exg
+
+{
+  "customerId": 1,
+  "messages": [
+    "message"
+  ],
+  "products": [
+    {
+      "description": "설명",
+      "id": 1,
+      "items": [
+        {
+          "count": 1,
+          "id": 1,
+          "name": "270",
+          "price": 10000
+        }
+      ],
+      "name": "나이키 에어포스",
+      "sellerId": 1
+    }
+  ]
+}

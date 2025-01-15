@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 public class CustomerCartController {
 
-	// 임시 코드
 	private final CartApplication cartApplication;
 	private final JwtAuthenticationProvider provider;
 
@@ -25,6 +24,20 @@ public class CustomerCartController {
 		return ResponseEntity.ok(cartApplication.addCart(provider.getUserVo(token).getId(), form));
 	}
 
+	@GetMapping
+	public ResponseEntity<Cart> showCard(
+			@RequestHeader(name = "X-AUTH-TOKEN") String token) {
+		return ResponseEntity.ok(cartApplication.getCart(provider.getUserVo(token).getId()));
+
+	}
+
+	@PutMapping
+	public ResponseEntity<Cart> updateCard(
+			@RequestHeader(name = "X-AUTH-TOKEN") String token,
+			@RequestBody Cart cart) {
+		return ResponseEntity.ok(cartApplication.updateCart(provider.getUserVo(token).getId(), cart));
+
+	}
 
 
 }
