@@ -133,3 +133,36 @@ X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJMbEIxSVR6T3NNbGdhWHRpSFJEVHVwWk5RV
     }
   ]
 }
+
+
+### 카트 주문
+POST http://localhost:8082/customer/cart/order
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJMbEIxSVR6T3NNbGdhWHRpSFJEVHVwWk5RV1NTMWJFQU4xVUJQNDVkS1FnPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNzM2Nzc0OTQ1LCJleHAiOjE3MzY4NjEzNDV9.xhueG_lFZGptiAT5Fs5Bo_zzs51OSZyJKSjAXnl3exg
+
+{
+    "customerId": 1,
+    "products": [
+        {
+            "id": 1,
+            "sellerId": 1,
+            "name": "나이키 에어포스",
+            "description": "상품 설명",
+            "items": [
+                {
+                    "id": 1,
+                    "name": "270",
+                    "count": 1,
+                    "price": 11000
+                },
+                {
+                    "id": 2,
+                    "name": "280",
+                    "count": 2,
+                    "price": 10000
+                }
+            ]
+        }
+    ],
+    "messages": []
+}
